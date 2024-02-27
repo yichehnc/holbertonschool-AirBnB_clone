@@ -14,7 +14,7 @@ class BaseModel:
 
     def __init__(self):
         """Initialisation of class attributes"""
-        self.id = BaseModel.id
+        self.id = str(uuid.uuid4())
         self.created_at = BaseModel.created_at
         self.updated_at = BaseModel.updated_at
 
