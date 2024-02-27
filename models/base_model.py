@@ -9,8 +9,8 @@ class BaseModel:
 
     id = str(uuid.uuid4())
 
-    created_at = datetime.datetime.today()
-    updated_at = datetime.datetime.today()
+    created_at = datetime.datetime.now()
+    updated_at = datetime.datetime.now()
 
     def __init__(self):
         """Initialisation of class attributes"""
@@ -27,7 +27,7 @@ class BaseModel:
         """
         updates the public instance attribute updated_at with current datetime
         """
-        self.updated_at = BaseModel.updated_at
+        self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
         """
