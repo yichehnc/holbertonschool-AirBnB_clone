@@ -1,25 +1,27 @@
 #!/usr/bin/python3
-"""File storage to serialize and deserialize instances to a JSON file"""
+"""This module creates FileStorage class"""
 import json
 
 
-class Filestorage:
+class FileStorage:
     """
-    Serialize or deserialize data
+    This defines FileStorage Class
+
     Attributes:
-    __file_path(string): path to the JSON file (ex: file.json)
-    __objects(dictionary): empty but store all objects by id
+    __file_path(string): path to the JSON file
+    __objects(dictionary): empty but will store all objects by <class name>.id
     """
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
-        """Returns the dictionary"""
+        """Returns the dictionary __objects"""
         return self.__objects
 
     def new(self, obj):
         """
         sets in __objects the obj with key <obj class name>.id
+
         Arg:
         obj(object): object to be set into __objects
         """
@@ -44,5 +46,5 @@ class Filestorage:
         except Exception:
             pass
         for key, dict in reloaded_dict.items():
+            # create an object based on the dict
             self.__objects[key] = BaseModel(**dict)
-        # create an object based on the dict

@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""Base Model Module"""
+"""This module creates BaseModel class"""
 import uuid
 import datetime
 from models import storage
 
+
 class BaseModel:
-    """ BaseModel Class"""
+    """This defines BaseModel Class"""
 
     def __init__(self, *args, **kwargs):
-        """Initialisation of class attributes"""
+        """Initialisation of the BaseModel Class"""
         if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key != "__class__":
@@ -22,14 +23,12 @@ class BaseModel:
             storage.new(self)
 
     def __str__(self):
-        """print string"""
+        """Return the string representation of BaseModel Class"""
         return ("[{}] ({}) {}".
                 format(self.__class__.__name__, self.id, self.__dict__))
 
     def save(self):
-        """
-        updates the public instance attribute updated_at with current datetime
-        """
+        """updates the updated_at with the current datetime"""
         self.updated_at = datetime.datetime.now()
         storage.save()
 
