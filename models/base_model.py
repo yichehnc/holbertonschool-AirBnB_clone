@@ -7,16 +7,11 @@ import datetime
 class BaseModel:
     """ BaseModel Class"""
 
-    id = str(uuid.uuid4())
-
-    created_at = datetime.datetime.now()
-    updated_at = datetime.datetime.now()
-
     def __init__(self):
         """Initialisation of class attributes"""
         self.id = str(uuid.uuid4())
-        self.created_at = BaseModel.created_at
-        self.updated_at = BaseModel.updated_at
+        self.created_at = datetime.datetime.now()
+        self.updated_at = datetime.datetime.now()
 
     def __str__(self):
         """print string"""
