@@ -43,6 +43,6 @@ class Filestorage:
                 reloaded_dict = json.load(file)
         except Exception:
             pass
-        for key, obj in reloaded_dict.items():
+        for key, dict in reloaded_dict.items():
             self.__objects[key] = BaseModel(**dict)
         # create an object based on the dict
