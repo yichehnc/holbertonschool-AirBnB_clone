@@ -22,8 +22,7 @@ class TestFileStorage(unittest.TestCase):
         Test for save() method
         """
         object_1 = BaseModel()
-        self.storage.new(object_1)
-        self.storage.save()
+        object_1.save()
         self.assertTrue(os.path.exists(FileStorage._FileStorage__file_path))
 
 
