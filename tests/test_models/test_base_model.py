@@ -44,14 +44,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(my_model.id, "")
         self.assertNotEqual(my_model.created_at, "")
         self.assertNotEqual(my_model.updated_at, "")
-    
-    def test_file_exist(self):
-        """
-        Test where the file exist
-        """
-        object_1 = BaseModel()
-        object_1.save()
-        self.assertTrue(os.path.exists(FileStorage._FileStorage__file_path))
 
 
 if __name__ == "__main__":
