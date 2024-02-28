@@ -9,8 +9,8 @@ class TestState(unittest.TestCase):
     """Test case for State Class"""
     def test_state(self):
         """Test for State Class"""
-        pass
-
+        my_state = State()
+        self.assertIsInstance(my_state, State)
 
 
 if __name__ == "__main__":
