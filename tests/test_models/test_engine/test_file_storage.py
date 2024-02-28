@@ -23,15 +23,6 @@ class TestFileStorage(unittest.TestCase):
         key = "{}.{}".format(my_model.__class__.__name__, my_model.id)
         self.assertEqual(my_model.id, all_objs[key].__dict__['id'])
 
-    # def test_save(self):
-    #     """
-    #     Test for save() method
-    #     """
-    #     object_1 = BaseModel()
-    #     self.storage.new(object_1)
-    #     self.storage.save()
-    #     self.assertTrue(os.path.exists(FileStorage._FileStorage__file_path))
-
     def test_reload(self):
         """
         Test for reload() method
