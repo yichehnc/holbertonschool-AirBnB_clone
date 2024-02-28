@@ -3,17 +3,22 @@
 import unittest
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
-from models import storage
 import os
 
 
 class TestFileStorage(unittest.TestCase):
     """Test case for FileStorage Class"""
+    def setUp(self):
+        """
+        Setup for FileStorage
+        """
+        self.storage = FileStorage()
+
     def test_all(self):
         """Test all method"""
         my_model = BaseModel()
         my_model.save()
-        all_objs = storage.all()
+        all_objs = self.storage.all()
         key = "{}.{}".format(my_model.__class__.__name__, my_model.id)
         self.assertEqual(my_model.id, all_objs[key].__dict__['id'])
 
@@ -22,7 +27,9 @@ class TestFileStorage(unittest.TestCase):
         Test for save() method
         """
         object_1 = BaseModel()
-        object_1.save()
+        self.storage.new(object_1)
+        self.storage.save()
+        # name mangling in Python.
         self.assertTrue(os.path.exists(FileStorage._FileStorage__file_path))
 
 
