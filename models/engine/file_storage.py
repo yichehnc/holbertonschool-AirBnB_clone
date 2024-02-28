@@ -39,7 +39,12 @@ class FileStorage:
     def reload(self):
         """deserializes the JSON file to __objects"""
         from models.base_model import BaseModel
+        from models.user import User
         reloaded_dict = {}
+        class_dict = {
+            "BaseModel": BaseModel,
+            "User": User
+        }
         try:
             with open(self.__file_path, 'r', encoding="UTF-8") as file:
                 reloaded_dict = json.load(file)
@@ -47,4 +52,4 @@ class FileStorage:
             pass
         for key, dict in reloaded_dict.items():
             # create an object based on the dict
-            self.__objects[key] = BaseModel(**dict)
+            self.__objects[key] = class_dict[dict["__class__"]](**dict)
