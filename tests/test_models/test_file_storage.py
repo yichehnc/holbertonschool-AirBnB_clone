@@ -3,6 +3,7 @@
 import unittest
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
+from models import storage
 import os
 
 
@@ -12,9 +13,9 @@ class TestFileStorage(unittest.TestCase):
         """Test save method"""
         my_model = BaseModel()
         my_model.save()
-        with open ('file.json', 'r', encoding='UTF-8') as file:
-            self.assertNotEqual(len(file.read()), 0)
-        os.remove('file.json')
+        all_objs = storage.all()
+        key = "{}.{}".format(my_model.__class__.__name__, my_model.id)
+        self.assertEqual(my_model.id, all_objs[key].__dict__['id'])
 
 
 if __name__ == "__main__":
