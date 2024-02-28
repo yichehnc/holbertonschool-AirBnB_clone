@@ -18,7 +18,7 @@ class TestBaseModel(unittest.TestCase):
         """Test to_dict method"""
         my_model = BaseModel()  # obj
         my_model_json = my_model.to_dict()  # dict
-        self.assertNotEqual(type(my_model_json), type(my_model))
+        self.assertEqual(my_model.id, my_model_json["id"])
 
 
 if __name__ == "__main__":
