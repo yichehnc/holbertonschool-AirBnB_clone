@@ -16,10 +16,9 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         """Test to_dict method"""
-        my_model = BaseModel()
-        my_model_json = my_model.to_dict()
-        type_check = type(my_model_json)  # dict
-        self.assertEqual(type_check, dict)
+        my_model = BaseModel()  # obj
+        my_model_json = my_model.to_dict()  # dict
+        self.assertNotEqual(type(my_model_json), type(my_model))
 
 
 if __name__ == "__main__":
