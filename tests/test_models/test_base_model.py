@@ -9,7 +9,7 @@ import os
 
 class TestBaseModel(unittest.TestCase):
     """Test case for BaseModel Class"""
-    def test_save(self):
+    def test_base_save(self):
         """Test save method"""
         my_model = BaseModel()
         old_updated_at = my_model.updated_at
