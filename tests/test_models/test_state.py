@@ -10,7 +10,7 @@ class TestState(unittest.TestCase):
     def test_state(self):
         """Test for State Class"""
         my_state = State()
-        self.assertIsInstance(my_state, State)
+        self.assertEqual(my_state.name, "")
 
 
 if __name__ == "__main__":
