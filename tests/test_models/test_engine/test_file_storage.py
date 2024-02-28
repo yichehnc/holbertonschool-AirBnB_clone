@@ -20,19 +20,12 @@ class TestFileStorage(unittest.TestCase):
             pass
 
     def test_all(self):
-        """
-        Test for all() method
-        """
-        self.assertIsInstance(self.storage.all(), dict)
-
-    def test_new(self):
-        """
-        Test for new() method
-        """
-        object_1 = BaseModel()
-        self.storage.new(object_1)
-        key = object_1.__class__.__name__ + "." + object_1.id
-        self.assertIn(key, self.storage.all())
+        """Test all method"""
+        my_model = BaseModel()
+        my_model.save()
+        all_objs = storage.all()
+        key = "{}.{}".format(my_model.__class__.__name__, my_model.id)
+        self.assertEqual(my_model.id, all_objs[key].__dict__['id'])
 
     def test_save(self):
         """
@@ -55,13 +48,7 @@ class TestFileStorage(unittest.TestCase):
         key = object_1.__class__.__name__ + "." + object_1.id
         self.assertIn(key, self.storage.all())
 
-    # def test_all(self):
-    #     """Test all method"""
-    #     my_model = BaseModel()
-    #     my_model.save()
-    #     all_objs = storage.all()
-    #     key = "{}.{}".format(my_model.__class__.__name__, my_model.id)
-    #     self.assertEqual(my_model.id, all_objs[key].__dict__['id'])
+
 
     # def test_save(self):
     #     """
