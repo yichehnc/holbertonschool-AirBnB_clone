@@ -14,6 +14,13 @@ class TestBaseModel(unittest.TestCase):
         new_updated_at = my_model.updated_at
         self.assertNotEqual(old_updated_at, new_updated_at)
 
+    def test_to_dict(self):
+        """Test to_dict method"""
+        my_model = BaseModel()
+        my_model_json = my_model.to_dict()
+        type_check = type(my_model_json)  # dict
+        self.assertEqual(type_check, dict)
+
 
 if __name__ == "__main__":
     unittest.main()
