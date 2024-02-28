@@ -14,10 +14,6 @@ class TestFileStorage(unittest.TestCase):
         Setup for FileStorage
         """
         self.storage = FileStorage()
-        try:
-            os.rename(FileStorage._FileStorage__file_path, "test_file.json")
-        except Exception:
-            pass
 
     def test_all(self):
         """Test all method"""
@@ -48,27 +44,6 @@ class TestFileStorage(unittest.TestCase):
         key = object_1.__class__.__name__ + "." + object_1.id
         self.assertIn(key, self.storage.all())
 
-
-
-    # def test_save(self):
-    #     """
-    #     Test for save() method
-    #     """
-    #     object_1 = BaseModel()
-    #     object_1.save()
-    #     self.assertTrue(os.path.exists(FileStorage._FileStorage__file_path))
-
-    # def test_reload(self):
-    #     """
-    #     Test for reload() method
-    #     """
-    #     object_1 = BaseModel()
-    #     self.storage.new(object_1)
-    #     self.storage.save()
-    #     self.storage._FileStorage__objects.clear()
-    #     self.storage.reload()
-    #     key = object_1.__class__.__name__ + "." + object_1.id
-    #     self.assertIn(key, self.storage.all())
 
 if __name__ == "__main__":
     unittest.main()
