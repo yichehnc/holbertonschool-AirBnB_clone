@@ -1,4 +1,4 @@
-# holbertonschool-AirBnB_clone
+# Holberton School - AirBnB Clone Console
 
 ### Project Description:
 
@@ -21,7 +21,6 @@ This project creates an AirBnB console. The console serves as a command interpre
 <a href="#console-usage">Console Usage</a>
 <ul>
 <li><a href="#Examples-of-commands">Examples of commands</a></li>
-<li><a href="#Flowchart">Flowchart</a></li>
 <li><a href="#interactive-mode">Interactive Mode</a></li>
 <li><a href="#non-interactive-mode">Non-interactive Mode</a></li>
 </ul>
@@ -33,19 +32,25 @@ This project creates an AirBnB console. The console serves as a command interpre
 
 ### Getting Started
 
-#### Installation:
+### Installation:
+
+Clone this repository to your local machine using the following command:
+
+```
+git clone https://github.com/yichehnc/holbertonschool-AirBnB_clone
+```
 
 You need to have Python3 installed in order to be able to use the console:
 
     sudo apt-get install python3
 
-#### How to run the console:
+### How to run the console:
 
 If you want to execute the console use:
 
      python3 console.py or ./console.py
 
-#### Testing:
+### Testing:
 
 We use these functions to test our work:
 
@@ -60,7 +65,7 @@ We use these functions to test our work:
 | `all`    | Lists all instances, optionally filtered by class name.                              | `$ all BaseModel`                                          |
 | `update` | Modifies an instance using its class name, ID, and given attribute.                  | `$ update BaseModel 001-002-003 email "example@email.com"` |
 
-#### How to use commands?
+### How to use commands?
 
 These interpreter commands can be used to aid you in handling data requirements:
 | Command | Function |
@@ -73,9 +78,9 @@ These interpreter commands can be used to aid you in handling data requirements:
 | quit | exit the console |
 | help | show the help of the commands |
 
-## Command Input Examples:
+### Command Input Examples:
 
-## Simple Commands
+### Simple Commands
 
 | Command | Example                                         |
 | ------- | ----------------------------------------------- |
@@ -84,7 +89,7 @@ These interpreter commands can be used to aid you in handling data requirements:
 | all     | create [class name] [id]                        |
 | update  | create [class name] [id] [arg_name] [arg_value] |
 
-## Alternative Commands
+### Alternative Commands
 
 | Command                                                              | Example                                                                                              |
 | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -95,7 +100,7 @@ These interpreter commands can be used to aid you in handling data requirements:
 | [class name].update([id], [attribute name], [attribute value].all()) | User.update("12345678-9012-3456-7890-123456789012", "first_name", "Betty")                           |
 | (class name).update([id], [dictionary representation])               | User.update("12345678-9012-3456-7890-123456789012", {"first_name": "Betty", "last_name": Holberton}) |
 
-# Reservation System Objects
+### Reservation System Objects
 
 These are objects that can be passed to the console:
 | Object | Function |
@@ -109,7 +114,7 @@ These are objects that can be passed to the console:
 
 ### Console Usage
 
-#### Interactive Mode
+### Interactive Mode
 
 To utilize the console in interactive mode, execute the subsequent command:
 
